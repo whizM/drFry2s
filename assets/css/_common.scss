@@ -1,0 +1,37 @@
+html {
+  font-size: 18px;
+  font-family: $font-noto;
+  background-color: #F5F5F5;
+}
+
+.is-pc {
+  display: block;
+  @include media-pc {
+      display: none!important;
+  }
+}
+.isno-pc {
+  display: none;
+  @include media-pc {
+      display: block!important;
+  }
+}
+
+.is-sp {
+  display: none!important;
+  @include media-sp {
+      display: block!important;
+  }
+}
+.is-sp-sp {
+  display: none!important;
+  @include media-sp-sp {
+      display: block!important;
+  }
+}
+
+.l-common {
+  max-width: 968px;
+  margin: 0 auto;   
+}
+
