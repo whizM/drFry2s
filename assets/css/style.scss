@@ -5,16 +5,30 @@
 @import './component';
 
 .p-header {
+    position: absolute;
+    top: 16px;
+    width: 100%;
     .container {
-        height: 100%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.14);
+        border-radius: 64px;
+        height: 64px;
+        width: calc(100% - 40px);
+        @include media-sp {
+            height: 50px;
+        }
     }
-    height: 100px;
     &__logo {
-        height: 59px;
-        width: 96px;
+        height: 34px;
+        width: 72px;
+        @include media-sp {
+            height: 25px;
+            width: 54px;
+        }
         figure {
             width: 100%;
             height: 100%;
@@ -25,20 +39,40 @@
         height: 50px;
         left: 1112px;
         top: 26px;
-        background: #FFEC30;
+        background: #EDCC2C;
         border-radius: 30px;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         color: #0C0C0C;
         font-weight: 700;
-        font-size: 18px;
-        line-height: 26px;
+        font-size: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 4px;
+        transition: ease-out 0.1s;
+        cursor: pointer;
+        &:hover {
+            background-color: #eed556;
+            scale: 1.05;
+            transition: 0.1s ease-in;
+        }
+        svg {
+            margin-top: 2px;
+            width: 20px;
+            height: 16px;
+            @include media-sp-sp {
+                width: 18px;
+                height: 14px;
+            }
+        }
         @include media-sp {
             width: 150px;
             height: 40px;
             font-size: 15px;
+        }
+        @include media-sp-sp {
+            width: 120px;
+            height: 35px;
+            font-size: 12px;
         }
     }
 }
@@ -58,10 +92,75 @@
 .p-main {
     .p-fv {
         width: 100%;
-        height: 800px;
-        figure {
-            width: 100%;
-            height: 100%;
+        height: 900px;
+        background-image: url("../img/fv-bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include media-pc {
+            background-position: 60%;
+            height: calc(450px + 30vw);
+        }
+        @media screen and (max-width: 500px) {
+            height: calc(700px - (500px - 100vw));
+        }
+        @include media-sp-sp {
+            background-position: 55%;
+            height: 600px;
+        }
+        .container {
+            position: relative;
+        }
+        &__txt {
+            position: absolute;
+            left: 0;
+            top: 116px;
+            z-index: 4;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            figure {
+                display: flex;
+                justify-content: start;
+            }
+            @include media-pc {
+                width: 50%;
+            }
+            @include media-sp {
+                width: 60%;
+            }
+            @media screen and (max-width: 500px) {
+                top: 100px;
+                width: calc(100% - 40px);
+            }
+            @include media-sp-sp {
+                width: calc(100% - 40px);
+                margin: 0 20px 0 20px;
+            }
+            img {
+                width: unset;
+                height: unset;
+            }
+        }
+        &__dr {
+            position: absolute;
+            left: 50%;
+            top: 176px;
+            z-index: 2;
+            @include media-pc {
+                margin-right: 20px;
+                width: 50%;
+                top: 136px;
+            }
+            @include media-sp {
+            }
+            @include media-sp-sp {
+                display: none;
+            }
+            @media screen and (max-width: 500px) {
+                display: none;
+            }
         }
     }
 
@@ -128,61 +227,82 @@
                 margin-top: 30px
             }
         }
-        .carousel {
-            top: 0;
-            width: 100%;
+        .marquee {
+            width: var(--marquee-width);
+            height: var(--marquee-height);
+            color: #eee;
+            overflow: hidden;
+            position: relative;
+            margin-top: 25px;
+          }
+          .marquee-content {
+            list-style: none;
             height: 100%;
-            left: 100%;
-            position: absolute;
-            white-space: nowrap;
             display: flex;
-            justify-content: space-around;
-            animation: scroll 40s linear infinite;
-            img {
-                height: 100%;
-                border-radius: 14px;
-                background-color: white;
-                margin-right: 20px;
-                object-fit: fill;
+            animation: scrolling var(--marquee-animation-duration) linear infinite;
+            &:hover {
+                animation-play-state: paused;
             }
-        }
-        .carousel_1 {
-            position: absolute;
-            width: 100%;
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* text-align: center; */
+                flex-shrink: 0;
+                width: var(--marquee-element-width);
+                max-height: 100%;
+                font-size: calc(var(--marquee-height)*3/4); /* 5rem; */
+                white-space: nowrap;
+                background:white;
+                border-radius: 14px;
+                margin-left:20px;
+                img {
+                    width: 100%;
+                    /* height: 100%; */
+                    border-radius: 14px;
+                    object-fit: fill;
+                }
+            }
+          }
+          .marquee-content-reverse {
+            list-style: none;
             height: 100%;
-            left: -2591px;
-            white-space: nowrap;
             display: flex;
-            justify-content: space-around;
-            animation: scroll_1 40s linear infinite;
-            img {
-                height: 100%;
-                border-radius: 14px;
-                background-color: white;
-                margin-right: 20px;
+            animation: scrolling-reverse var(--marquee-animation-duration) linear infinite;
+            &:hover {
+                animation-play-state: paused;
             }
-        }
-        .carousel-secondary {
-            animation-delay: 20s;
-        }
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* text-align: center; */
+                flex-shrink: 0;
+                width: var(--marquee-element-width);
+                max-height: 100%;
+                font-size: calc(var(--marquee-height)*3/4); /* 5rem; */
+                white-space: nowrap;
+                background:white;
+                border-radius: 14px;
+                margin-left:20px;
+                img {
+                    width: 100%;
+                    /* height: 100%; */
+                    border-radius: 14px;
+                    object-fit: fill;
+                }
+            }
+          }
+          @keyframes scrolling {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
+          }
+          @keyframes scrolling-reverse {
+            100% { transform: translateX(0); }
+            0% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
+          }
+    }
 
-    }
-    @keyframes scroll {
-        0% {
-            left: 100%;
-        }
-        100% {
-            left: calc(-5182px + 100vw);
-        }
-    }
-    @keyframes scroll_1 {
-        0% {
-            left: -2591px;
-        }
-        100% {
-            left: 2591px;
-        }
-    }
     .p-moisture {
         
         position: relative;
