@@ -338,6 +338,14 @@ section {
   flex-direction: column;
   gap: 40px;
 }
+@media screen and (max-width: 768px) {
+  .cta__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .cta__here {
   border-radius: 10px;
   color: white;
@@ -685,10 +693,11 @@ section {
   font-size: 25px;
   line-height: 40px;
   color: #3D3D3D;
+  font-weight: 600;
 }
 @media screen and (max-width: 768px) {
   .p-main .p-effects__item--desc {
-    font-size: 30px;
+    font-size: calc(20px + 0.2vw);
   }
 }
 @media screen and (max-width: 375px) {

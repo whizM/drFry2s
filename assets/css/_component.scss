@@ -92,6 +92,14 @@ section {
     margin: 100px auto 0px;
     display: flex;
     flex-direction: column;
+    &__wrapper {
+        @include media-sp {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
     gap: 40px;
     &__here {
         border-radius: 10px;

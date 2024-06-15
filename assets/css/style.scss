@@ -207,8 +207,9 @@
                 font-size: 25px;
                 line-height: 40px;
                 color: #3D3D3D;
+                font-weight: 600;
                 @include media-sp {
-                    font-size: 30px;
+                    font-size: calc(20px + 0.2vw)
                 }
                 @include media-sp-sp {
                     font-size: 20px;
