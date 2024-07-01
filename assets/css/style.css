@@ -50,11 +50,11 @@ html {
 }
 
 *::-moz-selection {
-  color: white;
+  color: green;
 }
 
 *::selection {
-  color: white;
+  color: green;
 }
 
 h1,
@@ -593,6 +593,7 @@ section {
 .p-main .p-fv__txt figure {
   display: flex;
   justify-content: start;
+  margin-top: 30px;
 }
 @media screen and (max-width: 1280px) {
   .p-main .p-fv__txt {
@@ -1177,13 +1178,13 @@ section {
 .p-main .p-friedfood__item--desc .item-desc {
   margin-top: 30px;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 40px;
   color: #000000;
 }
 @media screen and (max-width: 1280px) {
   .p-main .p-friedfood__item--desc .item-desc {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 35px;
   }
 }
@@ -1295,7 +1296,7 @@ section {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 30px 50px;
+  padding: 30px 0px;
 }
 @media screen and (max-width: 768px) {
   .p-main .p-whatmake__item {
@@ -1670,12 +1671,12 @@ section {
   }
 }
 .p-main .p-leaseplan .semi_txt {
-  font-size: 30px;
+  font-size: 20px;
   margin-top: 35px;
 }
 @media screen and (max-width: 768px) {
   .p-main .p-leaseplan .semi_txt {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .p-main .p-leaseplan__cost {
@@ -1726,6 +1727,12 @@ section {
   text-align: center;
   color: #3D3D3D;
 }
+@media screen and (max-width: 1280px) {
+  .p-main .p-leaseplan .big_txt {
+    font-size: 28px;
+    line-height: 50px;
+  }
+}
 @media screen and (max-width: 768px) {
   .p-main .p-leaseplan .big_txt {
     font-size: 20px;
@@ -1745,6 +1752,12 @@ section {
   text-decoration-thickness: 50%;
   text-decoration-color: #FFEC30;
   text-underline-offset: -0.5rem;
+}
+@media screen and (max-width: 1280px) {
+  .p-main .p-leaseplan .underlined_text {
+    font-size: 28px;
+    line-height: 50px;
+  }
 }
 @media screen and (max-width: 768px) {
   .p-main .p-leaseplan .underlined_text {
@@ -1819,7 +1832,13 @@ section {
 .p-main .p-plzuse__method--ttl {
   font-weight: 600;
   font-size: 24px;
-  color: #000000;
+  color: #DB7058;
+}
+.p-main .p-plzuse__method--ttl .circle_number {
+  border: solid 2px #DB7058;
+  border-radius: 50%;
+  padding: 0 8px;
+  font-size: 20px;
 }
 .p-main .p-plzuse__method--desc {
   margin-top: 30px;
@@ -1950,6 +1969,11 @@ section {
 }
 .p-main .p-faq__item .item-answer__extend {
   cursor: pointer;
+}
+.p-main .p-faq__item .item-answer .item-sym {
+  border: white solid 3px;
+  border-radius: 50%;
+  height: 50px;
 }
 .p-main .p-contact {
   padding-bottom: 100px;
