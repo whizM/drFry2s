@@ -1178,13 +1178,13 @@ section {
 .p-main .p-friedfood__item--desc .item-desc {
   margin-top: 30px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 40px;
   color: #000000;
 }
 @media screen and (max-width: 1280px) {
   .p-main .p-friedfood__item--desc .item-desc {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 35px;
   }
 }
