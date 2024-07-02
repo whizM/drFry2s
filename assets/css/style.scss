@@ -317,7 +317,7 @@
         &__items {
             display: flex;
             justify-content: space-between;
-            margin-top: 80px;
+            margin-top: 70px;
             @include media-sp {
                 flex-wrap: wrap;
                 align-items: center;
@@ -390,7 +390,7 @@
             }
         }
         &__arrow {
-            margin-top: 170px;
+            margin-top: 120px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -628,7 +628,7 @@
             }
         }
         &__arrow {
-            margin-top: 75px;
+            margin-top: 60px;
         }
         &__bottomtext {
             margin-top: 30px;
@@ -786,7 +786,7 @@
             }
         }
         &__items {
-            margin-top: 105px;
+            margin-top: 80px;
             display: flex;
             flex-direction: column;
             gap: 80px;
@@ -1274,12 +1274,16 @@
             margin-top: 65px;
             display: flex;
             flex-direction: column;
-            gap: 70px;
+            gap: 50px;
             @include media-sp-sp {
                 justify-content: center;
                 align-items: center;
             }
         }
+        .rotated {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+          }
         &__item {
             @include media-sp-sp {
                 width: calc(100% - 20px)
@@ -1290,8 +1294,14 @@
                 text-align: center;
                 color: #663300;
                 width: 50px;
-                @include media-sp-sp {
-                    width: unset;
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                @include media-sp {
+                    font-size: 20px;
+                }
+                @include media-sp {
+                    width: 30px;
                 }
             }
             .item-ques {
@@ -1309,12 +1319,18 @@
                 letter-spacing: 0.056em;
                 line-height: 40px;
                 color: #0C0C0C;
+                @include media-sp {
+                    font-size: 20px;
+                }
                 @include media-sp-sp {
                     gap: 5px;
-                    font-size: 22px;
+                    font-size: 20px;
+                    padding: 10px;
                 }
                 &__desc {
-                    width: calc(100% - 100px);
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
                     @include media-sp-sp {
                         width: 100%;
                     }
@@ -1335,18 +1351,23 @@
                 justify-content: space-between;
                 width: 100%;
                 padding: 20px;
-                font-size: 20px;
-                line-height: 40px;
+                font-size: 25px;
+                line-height: 50px;
                 text-align: left;
-                @include media-sp-sp {
-                    gap: 5px;
-                    font-size: 18px;
+                @include media-sp {
+                    font-size: 15px;
                     line-height: 30px;
                 }
+                @include media-sp-sp {
+                    gap: 5px;
+                    font-size: 15px;
+                    line-height: 30px;
+                    padding: 10px;
+                }
                 &__desc {
-                    width: calc(100% - 100px);
+                    width: 100%;
                     @include media-sp-sp {
-                        width: 100%;
+                        width: calc(100% - 40px);
                     }
                 }
                 &__extend {
@@ -1356,6 +1377,12 @@
                     border: white solid 3px;
                     border-radius: 50%;
                     height: 50px;
+                    align-items: end;
+                    margin-right: 5px;
+                    @include media-sp {
+                        height: 40px;
+                        width: 40px;
+                    }
                 }
             }
         }

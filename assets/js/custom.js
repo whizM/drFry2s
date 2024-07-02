@@ -38,3 +38,24 @@ root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 for(let i=0; i<marqueeElementsDisplayed; i++) {
   marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 }
+
+
+// Hide all answer sections initially
+$('.item-answer').hide();
+
+// Click event for question items
+$('.item-ques').click(function() {
+  // Toggle the answer for the clicked question
+  $(this).next('.item-answer').slideToggle(300);
+
+  // Toggle the rotation of the extend icon
+  $(this).find('.item-ques__extend svg').toggleClass('rotated');
+
+  // Close other open answers (optional, remove if you want multiple answers open at once)
+  $('.item-answer').not($(this).next()).slideUp(300);
+  $('.item-ques__extend svg').not($(this).find('.item-ques__extend svg')).removeClass('rotated');
+});
+
+
+
+
